@@ -38,16 +38,16 @@ class HomeView extends GetView<HomeController> {
               final user = controller.userList[index];
               return Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFFDF4F5),
-                    border: Border.all(color: Colors.grey, width: 0.25),
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
+                child: InkWell(
+                   onTap: () {
                       Get.to(() => ChatscreenView(user));
                     },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFDF4F5),
+                      border: Border.all(color: Colors.grey, width: 0.25),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Row(
